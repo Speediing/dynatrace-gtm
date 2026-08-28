@@ -9,9 +9,9 @@ export type ClipId =
   | "08-chief-groupchat";
 
 export type JobId =
-  | "standardize-room"
-  | "legal-redlines"
-  | "attach-engine";
+  | "account-brief"
+  | "call-followup"
+  | "sourced-answer";
 
 export type ParticipantRole = "you" | "bot";
 
@@ -235,7 +235,7 @@ export type Clip = {
   caption: string;
 };
 
-export type CroJob = {
+export type GtmJob = {
   id: JobId;
   number: number;
   title: string;
@@ -248,13 +248,4 @@ export type CroJob = {
   outcome: string;
   clips: ClipId[];
   demo: DemoThread;
-};
-
-export type Quote = {
-  name: string;
-  handle: string;
-  date: string;
-  avatar: string;
-  quote: string;
-  source: string;
 };

@@ -1,5 +1,5 @@
 {
-  "name": "datadog-cro",
+  "name": "dynatrace-grokbot",
   "version": "0.1.0",
   "private": true,
   "scripts": {

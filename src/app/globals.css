@@ -1,15 +1,16 @@
 @import "tailwindcss";
 
 :root {
-  --ink: #20231f;
-  --muted: #686b63;
-  --paper: #f5f1e8;
-  --surface: #fbf9f4;
-  --line: #d8d3c8;
-  --accent: #632ca6;
-  --accent-dark: #4c1d82;
-  --sage: #788274;
-  --blue: #5e7180;
+  --ink: #20242d;
+  --muted: #666d78;
+  --paper: #f6f4ee;
+  --surface: #fbfaf7;
+  --line: #d8d6cf;
+  --accent: #528dee;
+  --accent-dark: #8261cf;
+  --sage: #47ae8f;
+  --blue: #528dee;
+  --purple: #8261cf;
   --bg: var(--paper);
   --bg-deep: var(--ink);
   --ink-soft: var(--muted);
@@ -309,22 +310,22 @@ button:active:not(:focus-visible),
   left: 0;
   right: 0;
   width: 100%;
-  border-bottom: 1px solid rgba(32, 35, 31, 0.08);
-  background: rgba(245, 241, 232, 0.58);
+  border-bottom: 1px solid rgba(32, 36, 45, 0.08);
+  background: rgba(246, 244, 238, 0.68);
   backdrop-filter: blur(18px);
 }
 
 .brand-lockup {
-  --dd-h: 36px;
+  --brand-h: 24px;
   display: inline-flex;
-  align-items: flex-start;
-  gap: 0.4rem;
+  align-items: center;
+  gap: 0.28rem;
   min-width: 0;
   color: var(--ink);
   text-decoration: none;
 }
 
-.brand-dd,
+.brand-customer,
 .brand-sxai {
   display: block;
   width: auto;
@@ -334,14 +335,13 @@ button:active:not(:focus-visible),
   object-fit: contain;
 }
 
-.brand-dd {
-  height: var(--dd-h);
+.brand-customer {
+  height: var(--brand-h);
 }
 
 .brand-sxai {
-  height: calc(var(--dd-h) * 0.58);
-  max-width: calc(var(--dd-h) * 4.8);
-  margin-top: calc(var(--dd-h) * 0.2);
+  height: calc(var(--brand-h) * 0.72);
+  max-width: calc(var(--brand-h) * 6.2);
   filter: brightness(0);
 }
 
@@ -350,19 +350,22 @@ button:active:not(:focus-visible),
 }
 
 .brand-lockup-sm {
-  --dd-h: 24px;
+  --brand-h: 17px;
 }
 
-.brand-lockup-md,
+.brand-lockup-md {
+  --brand-h: 24px;
+}
+
 .brand-lockup-lg {
-  --dd-h: 32px;
+  --brand-h: 30px;
 }
 
 .brand-times {
   align-self: center;
   margin-top: 0;
   color: var(--muted);
-  font-size: calc(var(--dd-h) * 0.28);
+  font-size: calc(var(--brand-h) * 0.42);
   font-weight: 300;
   line-height: 1;
 }
@@ -375,8 +378,8 @@ button:active:not(:focus-visible),
   border: 1px solid color-mix(in srgb, var(--ink) 14%, transparent);
   border-radius: 0.65rem;
   color: var(--ink);
-  background: rgba(251, 249, 244, 0.9);
-  box-shadow: 0 0.5rem 1.5rem rgba(32, 35, 31, 0.1);
+  background: rgba(251, 250, 247, 0.92);
+  box-shadow: 0 0.5rem 1.5rem rgba(32, 36, 45, 0.1);
   backdrop-filter: blur(14px);
   font-size: 13px;
 }
@@ -527,14 +530,14 @@ button:active:not(:focus-visible),
   width: 0.65rem;
   height: 0.65rem;
   border-radius: 50%;
-  background: #5bc98b;
-  box-shadow: 0 0 0 0.3rem rgba(91, 201, 139, 0.13);
+  background: var(--sage);
+  box-shadow: 0 0 0 0.3rem color-mix(in srgb, var(--sage) 13%, transparent);
 }
 
 .background-agent-pulse::after {
   position: absolute;
   inset: -0.32rem;
-  border: 1px solid rgba(91, 201, 139, 0.48);
+  border: 1px solid color-mix(in srgb, var(--sage) 48%, transparent);
   border-radius: 50%;
   content: "";
 }
@@ -719,9 +722,9 @@ button:active:not(:focus-visible),
   gap: 0.65rem;
   margin: 0 0 1.2rem;
   padding: 0.58rem 0.76rem;
-  border: 1px solid color-mix(in srgb, #2b7a4b 22%, var(--line));
+  border: 1px solid color-mix(in srgb, var(--sage) 28%, var(--line));
   border-radius: 999px;
-  background: color-mix(in srgb, #5bc98b 7%, var(--surface));
+  background: color-mix(in srgb, var(--sage) 7%, var(--surface));
 }
 
 .background-agent p {
@@ -734,7 +737,7 @@ button:active:not(:focus-visible),
 }
 
 .background-agent strong {
-  color: #236a42;
+  color: color-mix(in srgb, var(--sage) 75%, var(--ink));
   font-family: var(--mono);
   font-size: 0.58rem;
   font-weight: 750;
@@ -909,7 +912,11 @@ button:active:not(:focus-visible),
 
 .story-transcript-ui {
   background:
-    linear-gradient(155deg, rgba(99, 44, 166, 0.08), transparent 55%),
+    linear-gradient(
+      155deg,
+      color-mix(in srgb, var(--purple) 8%, transparent),
+      transparent 55%
+    ),
     var(--surface);
 }
 
@@ -975,12 +982,16 @@ button:active:not(:focus-visible),
   border-radius: 0.38rem;
   color: #fff;
   background:
-    radial-gradient(circle at 90% 12%, rgba(99, 44, 166, 0.8), transparent 34%),
+    radial-gradient(
+      circle at 90% 12%,
+      color-mix(in srgb, var(--purple) 80%, transparent),
+      transparent 34%
+    ),
     #29242f;
 }
 
 .story-mini-slide small {
-  color: #c6a7ea;
+  color: color-mix(in srgb, var(--purple) 45%, white);
   font-family: var(--mono);
   font-size: 0.45rem;
   font-weight: 700;
@@ -1002,7 +1013,7 @@ button:active:not(:focus-visible),
   padding: 0.19rem 0.34rem;
   border-radius: 0.2rem;
   color: #1b1820;
-  background: #d9b8ff;
+  background: var(--purple);
   font-size: 0.48rem;
   font-weight: 700;
 }
@@ -1013,7 +1024,11 @@ button:active:not(:focus-visible),
 
 .story-email-ui {
   background:
-    linear-gradient(145deg, rgba(99, 44, 166, 0.06), transparent 58%),
+    linear-gradient(
+      145deg,
+      color-mix(in srgb, var(--blue) 7%, transparent),
+      transparent 58%
+    ),
     var(--surface);
 }
 
@@ -1191,7 +1206,11 @@ button:active:not(:focus-visible),
 
 .story-research-ui {
   background:
-    radial-gradient(circle at 50% 60%, rgba(99, 44, 166, 0.11), transparent 48%),
+    radial-gradient(
+      circle at 50% 60%,
+      color-mix(in srgb, var(--purple) 11%, transparent),
+      transparent 48%
+    ),
     var(--surface);
 }
 
@@ -1312,7 +1331,7 @@ button:active:not(:focus-visible),
   place-items: center;
   border-radius: 50%;
   color: #1b1820;
-  background: #d9b8ff;
+  background: var(--purple);
   font-size: 0.5rem;
   font-weight: 800;
 }
@@ -2408,6 +2427,14 @@ button:active:not(:focus-visible),
 .leave-paper {
   background: var(--surface);
   box-shadow: none;
+}
+
+.leave-followup {
+  background: var(--surface);
+}
+
+.leave-followup .leave-reply {
+  min-height: 24rem;
 }
 
 .leave-paper-top {
@@ -4020,9 +4047,26 @@ button:active:not(:focus-visible),
   max-width: 18.5rem;
 }
 
-.org-avatar {
+.org-identity {
+  position: relative;
   grid-row: 1 / span 2;
-  display: inline-grid;
+  width: 3.35rem;
+  height: 2.55rem;
+}
+
+.org-identity.is-human {
+  display: grid;
+  width: 1.85rem;
+  height: 1.85rem;
+  place-items: center;
+}
+
+.org-avatar {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  display: grid;
   place-items: center;
   width: 1.85rem;
   height: 1.85rem;
@@ -4031,6 +4075,42 @@ button:active:not(:focus-visible),
   font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1;
+}
+
+.org-computer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: grid;
+  width: 2.25rem;
+  height: 1.7rem;
+  justify-items: center;
+}
+
+.org-computer i {
+  display: block;
+  width: 2.1rem;
+  height: 1.32rem;
+  border: 1.5px solid var(--ink);
+  border-radius: 0.18rem;
+  background:
+    linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--blue) 18%, var(--surface)),
+      color-mix(in srgb, var(--purple) 14%, var(--surface))
+    );
+}
+
+.org-computer b {
+  display: block;
+  width: 1.1rem;
+  height: 0.18rem;
+  border-radius: 999px;
+  background: var(--ink);
+}
+
+.roster > .eyebrow {
+  margin-bottom: 0.8rem;
 }
 
 .org-name {

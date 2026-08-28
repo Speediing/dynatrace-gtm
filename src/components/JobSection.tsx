@@ -1,15 +1,15 @@
-import type { CroJob, JobId } from "@/data/types";
+import type { GtmJob, JobId } from "@/data/types";
 import { Storyboard } from "./Storyboard";
 import { ChapterPayoff } from "./ChapterPayoff";
 import { JobMore } from "./JobMore";
 
 const JOB_ART: Record<JobId, string> = {
-  "standardize-room": "/brand/watercolor-room.png",
-  "legal-redlines": "/brand/watercolor-deal.png",
-  "attach-engine": "/brand/watercolor-attach.png",
+  "account-brief": "/brand/watercolor-research.jpg",
+  "call-followup": "/brand/watercolor-followup.jpg",
+  "sourced-answer": "/brand/watercolor-answers.jpg",
 };
 
-export function JobSection({ job }: { job: CroJob }) {
+export function JobSection({ job }: { job: GtmJob }) {
   const lastBeat = job.storyboard[job.storyboard.length - 1];
   const payoff =
     lastBeat?.artifact || lastBeat?.slides?.length ? lastBeat : undefined;
@@ -28,7 +28,7 @@ export function JobSection({ job }: { job: CroJob }) {
         <div className="background-agent">
           <span className="background-agent-pulse" aria-hidden />
           <p>
-            <strong>Background agent active</strong>
+            <strong>Illustrative agent workflow</strong>
             <small>
               {job.trigger} → {job.backgroundAction}
             </small>

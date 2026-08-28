@@ -185,7 +185,7 @@ function LiveVisual({ visual }: { visual: StoryVisual }) {
             <span>5:27 AM</span>
           </header>
           <div className="story-email-body">
-            <span className="story-avatar">JH</span>
+            <span className="story-avatar">CC</span>
             <p>
               <strong>{visual.sender}</strong>
               <small>{visual.subject}</small>
@@ -201,7 +201,7 @@ function LiveVisual({ visual }: { visual: StoryVisual }) {
       return (
         <div className="story-ui story-answers-ui" aria-hidden>
           <header className="story-ui-bar">
-            <strong>Grok checked the sources</strong>
+            <strong>Grok checked approved sources</strong>
             <span>{visual.status}</span>
           </header>
           <ul>
@@ -253,15 +253,15 @@ function LiveVisual({ visual }: { visual: StoryVisual }) {
               <span key={source}>{source}</span>
             ))}
           </div>
-          <footer>Public evidence found</footer>
+          <footer>Public sources collected</footer>
         </div>
       );
     case "three-why":
       return (
         <div className="story-ui story-why-ui" aria-hidden>
           <header className="story-ui-bar">
-            <strong>Account hypothesis</strong>
-            <span>Built from evidence</span>
+            <strong>Facts and hypotheses</strong>
+            <span>Kept separate</span>
           </header>
           <ol>
             {visual.items.map((item) => (
@@ -284,7 +284,7 @@ function LiveVisual({ visual }: { visual: StoryVisual }) {
               <p key={channel}>
                 <span>{index + 1}</span>
                 <strong>{channel}</strong>
-                <small>Personalized</small>
+                <small>Draft</small>
               </p>
             ))}
           </div>

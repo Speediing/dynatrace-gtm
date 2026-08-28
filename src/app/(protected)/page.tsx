@@ -1,7 +1,7 @@
 import { CompareTable } from "@/components/CompareTable";
 import { HeroTelemetry } from "@/components/HeroTelemetry";
 import { JobSection } from "@/components/JobSection";
-import { QuoteWall } from "@/components/QuoteWall";
+import { RosterChart } from "@/components/RosterChart";
 import { SiteNav } from "@/components/SiteNav";
 import { JOBS } from "@/data/jobs";
 
@@ -12,7 +12,7 @@ export default function HomePage() {
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           className="hero-watercolor-image"
-          src="/brand/watercolor-pad.png"
+          src="/brand/watercolor-hero.jpg"
           alt=""
         />
         <SiteNav />
@@ -23,41 +23,28 @@ export default function HomePage() {
           <HeroTelemetry />
           <section className="hero">
             <div>
-              <p className="eyebrow">A proactive agent for every Datadog rep</p>
-              <h1>The agents that work while your reps sell.</h1>
+              <p className="eyebrow">Grok Bot for Dynatrace GTM</p>
+              <h1>Agents do the prep. Sellers make the call.</h1>
               <p className="hero-intro">
-                Grok Bot listens to calls, watches the inbox, and researches
-                accounts in the background. Work triggers it — not another
-                prompt.
+                Grok Bot can research accounts, draft follow-ups, and prepare
+                sourced answers. The account owner reviews every output.
               </p>
             </div>
           </section>
 
           <section className="usecase-framing">
-            <p className="eyebrow">Three sample use cases</p>
+            <p className="eyebrow">Three illustrative use cases</p>
             <h2>
-              Grok Bot gives every seller their own fleet of always-available
-              agent teammates. Anything your sellers do today can be done
-              through Grok Bot.
+              A small fleet prepares the work around each customer
+              conversation.
             </h2>
-            <p>These are three examples from millions — not the boundary.</p>
+            <p>
+              Each example shows how an agent starts, checks its inputs, and
+              leaves a draft for review.
+            </p>
           </section>
 
-          <div className="metric-grid">
-            {JOBS.map((job) => (
-              <a
-                key={job.id}
-                className="metric-card"
-                href={`#${job.id}`}
-              >
-                <div className="metric-card-top">
-                  <p>Sample {String(job.number).padStart(2, "0")}</p>
-                </div>
-                <h2>{job.title}</h2>
-                <p className="metric-trigger">Starts when {job.trigger.toLowerCase()}</p>
-              </a>
-            ))}
-          </div>
+          <RosterChart />
         </div>
 
         <div id="jobs">
@@ -69,25 +56,21 @@ export default function HomePage() {
 
       <div className="orbit-break" aria-hidden>
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/brand/watercolor-orbit.png" alt="" />
+        <img src="/brand/watercolor-orbit.jpg" alt="" />
       </div>
 
       <div className="report">
         <CompareTable />
-        <QuoteWall />
       </div>
 
       <footer className="site-footer">
         <div>
-          <p className="footer-title">Cursor for Datadog</p>
-          <p>Grok Bot for Datadog sales</p>
+          <p className="footer-title">Dynatrace x SpaceXAI</p>
+          <p>Illustrative Grok Bot workflows for Dynatrace GTM</p>
         </div>
         <address className="footer-contact">
-          <p>Datadog&apos;s existing Cursor contact</p>
-          <strong>Madeline Ingleby</strong>
-          <a href="mailto:madeline.ingleby@cursor.com">
-            madeline.ingleby@cursor.com
-          </a>
+          <strong>Tyler Pickler</strong>
+          <a href="mailto:tyler.pickler@cursor.com">tyler.pickler@cursor.com</a>
         </address>
       </footer>
     </main>

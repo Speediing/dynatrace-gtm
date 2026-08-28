@@ -26,14 +26,24 @@ function Box({
   const body = (
     <>
       <span
-        className="org-avatar"
-        style={{
-          background: bot.color,
-          color: isLight(bot.color) ? "#111" : "#fff",
-        }}
         aria-hidden
+        className={`org-identity${bot.seat ? " is-human" : ""}`}
       >
-        {initials(bot)}
+        <span
+          className="org-avatar"
+          style={{
+            background: bot.color,
+            color: isLight(bot.color) ? "#111" : "#fff",
+          }}
+        >
+          {initials(bot)}
+        </span>
+        {!bot.seat ? (
+          <span className="org-computer">
+            <i />
+            <b />
+          </span>
+        ) : null}
       </span>
       <span className="org-name">{bot.name}</span>
       <span className="org-blurb">{bot.blurb}</span>
@@ -59,11 +69,11 @@ export function RosterChart() {
 
   return (
     <section id="roster" className="roster">
-      <h2>A background team for every sales rep</h2>
+      <p className="eyebrow">Fleet of agents</p>
+      <h2>One account owner. Three agents at their computers.</h2>
       <p className="section-lede">
-        The work itself is the trigger. A call starts, an email lands, or an
-        account enters the list — and the right agent picks it up. They keep
-        working after the laptop closes. Drafts stay drafts until the rep sends.
+        Each agent has a clear job and a linked use case. The account owner
+        checks every source, edits every draft, and controls every send.
       </p>
 
       <div className="org" role="tree">
@@ -84,6 +94,10 @@ export function RosterChart() {
           </ul>
         </div>
       </div>
+      <p className="roster-note">
+        Illustrative workflows. No agent sends or publishes without human
+        approval.
+      </p>
     </section>
   );
 }

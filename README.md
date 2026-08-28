@@ -1,10 +1,12 @@
-# Grok Bot for Datadog GTM
+# Dynatrace x SpaceXAI
 
-Passworded site. Grok Bot from SpaceXAI, for Datadog GTM.
+Password-protected Next.js site with three illustrative Grok Bot workflows for Dynatrace GTM:
 
-## What it is
+- A source-backed target account brief.
+- A post-call follow-up draft from approved meeting notes.
+- A sourced response to a technical or procurement question.
 
-Three GTM jobs on one page. Each job has a short problem statement, an interactive Grok Bot demo, and the matching Krista Letz clips under that demo. Below that: a light index of the clips and the public Grok Bot quote wall.
+Each detailed demo keeps the chat beside the agent computer. Every customer-facing action remains a draft until a person approves it.
 
 ## Run locally
 
@@ -14,18 +16,20 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000). Default password is `land2expand` (override with `SITE_PASSWORD`).
+Open [http://localhost:3000](http://localhost:3000). The default password is `land2expand`. Set `SITE_PASSWORD` to override it.
 
-## Krista clips
+The lockup uses the official Dynatrace wordmark from
+`https://assets.dynatrace.com/content/dam/dynatrace/misc/dynatrace_web.png`.
+`public/brand/dynatrace-wordmark.png` crops only the source file's empty border.
+The mark's colors and proportions are unchanged.
 
-Download into `private/media/krista-clips/` from the GitHub release (served only through the passworded `/api/media/...` route):
+## Optional demo clips
+
+Place the Krista Letz demo clips in `private/media/krista-clips/`. The password-protected `/api/media/...` route serves them.
+
+## Check the site
 
 ```bash
-gh release download krista-gtm-clips-720p-2026-08-26 \
-  --repo Speediing/grok-bot-quotes \
-  --dir private/media/krista-clips
+npm run lint
+npm run build
 ```
-
-## Deploy
-
-Preview only under the `jasonwiker` Vercel team, project name `datadog-cro`. Set `SITE_PASSWORD=land2expand`. Do not promote to a public production domain until Jason says so.
