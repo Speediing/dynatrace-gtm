@@ -5664,11 +5664,11 @@ button:active:not(:focus-visible),
 
 @media (max-width: 640px) {
   .nav-brand {
-    display: none;
+    display: flex;
   }
 
-  .site-header {
-    justify-content: flex-end;
+  .header-actions {
+    display: none;
   }
 
   .hero h1,
