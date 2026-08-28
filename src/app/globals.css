@@ -448,6 +448,14 @@ button:active:not(:focus-visible),
   position: relative;
 }
 
+.hero-watercolor + .report {
+  position: relative;
+  z-index: 2;
+  margin-top: clamp(-96px, -7vw, -64px);
+  background: var(--paper);
+  box-shadow: 0 -18px 48px rgba(32, 36, 45, 0.1);
+}
+
 .report-hero .hero,
 .report-hero .usecase-framing,
 .report-hero .metric-grid {
