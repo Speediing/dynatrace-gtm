@@ -249,3 +249,12 @@ export type GtmJob = {
   clips: ClipId[];
   demo: DemoThread;
 };
+
+export type Quote = {
+  name: string;
+  handle: string;
+  date: string;
+  avatar: string;
+  quote: string;
+  source: string;
+};
