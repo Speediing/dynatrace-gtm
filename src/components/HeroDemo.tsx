@@ -228,7 +228,9 @@ export function HeroDemo() {
               <JobIcon kind={job.icon} />
             </span>
             <p>
-              <strong>{job.name} Agent</strong>
+              <strong className={job.name.length > 18 ? "is-long" : undefined}>
+                {job.name} Agent
+              </strong>
               <small>
                 <span aria-hidden />
                 Working in the cloud

@@ -718,6 +718,11 @@ button:active:not(:focus-visible),
   font-weight: 620;
 }
 
+.hero-phone-header strong.is-long {
+  font-size: 0.64rem;
+  letter-spacing: -0.015em;
+}
+
 .hero-phone-header strong,
 .hero-phone-header small {
   overflow: hidden;
